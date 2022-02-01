@@ -70,8 +70,8 @@ const Card = ({ movie }) => {
         default:
           break;
       }
-      console.log(genreArray);
     }
+    return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
   return (
@@ -95,6 +95,10 @@ const Card = ({ movie }) => {
       </h4>
 
       <ul>{genreFinder()}</ul>
+      {movie.overview ? <h3>Synopsis</h3> : ""}
+      <p>{movie.overview}</p>
+
+      <div className="btn">Ajouter aux coups de coeur</div>
     </div>
   );
 };
